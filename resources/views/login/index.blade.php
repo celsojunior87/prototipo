@@ -1,468 +1,320 @@
-<div class="cotn_principal">
-<div class="cont_centrar">
-
-  <div class="cont_login">
-<div class="cont_info_log_sign_up">
-      <div class="col_md_login">
-<div class="cont_ba_opcitiy">
-
-        <h2>Entrar</h2>
-  <p>Para acessar a plataforma insira seu login e senha</p>
-  <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
-  </div>
-  </div>
-<div class="col_md_sign_up">
-<div class="cont_ba_opcitiy">
-  <h2>Cadastro</h2>
-
-
-  <p>Faça o cadastro para usufluir o que tem de melhor na nossa plataforma</p>
-
-  <button class="btn_sign_up" onclick="cambiar_sign_up()">Faça o Seu Cadastro</button>
-</div>
-  </div>
-       </div>
-
-
-    <div class="cont_back_info">
-       <div class="cont_img_back_grey">
-       <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
-       </div>
-
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<h2>LOGIN</h2>
+<div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>Create Account</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fa fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your email for registration</span>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <button>Sign Up</button>
+        </form>
     </div>
-<div class="cont_forms" >
-    <div class="cont_img_back_">
-       <img src="https://images.unsplash.com/42/U7Fc1sy5SCUDIu4tlJY3_NY_by_PhilippHenzler_philmotion.de.jpg?ixlib=rb-0.3.5&q=50&fm=jpg&crop=entropy&s=7686972873678f32efaf2cd79671673d" alt="" />
-       </div>
- <div class="cont_form_login">
-<a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
-   <h2>LOGIN</h2>
- <input type="text" placeholder="Email" />
-<input type="password" placeholder="Password" />
-<button class="btn_login" onclick="cambiar_login()">LOGIN</button>
-  </div>
-
-   <div class="cont_form_sign_up">
-<a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
-     <h2>Cadastrar</h2>
-<input type="text" placeholder="Email" />
-<input type="text" placeholder="User" />
-<input type="password" placeholder="Password" />
-<input type="password" placeholder="Confirm Password" />
-<button class="btn_sign_up" onclick="cambiar_sign_up()">Cadastrar</button>
-
-  </div>
-
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button><a href="{{url('/home')}}">Entrar</a></button>
+        </form>
     </div>
-
-  </div>
- </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <button class="ghost" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Hello, Friend!</h1>
+                <p>Enter your personal details and start journey with us</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
 </div>
 
-<script>
-/* ------------------------------------ Click on login and Sign Up to  changue and view the effect
----------------------------------------
-*/
 
-function cambiar_login() {
-  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";
-document.querySelector('.cont_form_login').style.display = "block";
-document.querySelector('.cont_form_sign_up').style.opacity = "0";
-
-setTimeout(function(){  document.querySelector('.cont_form_login').style.opacity = "1"; },400);
-
-setTimeout(function(){
-document.querySelector('.cont_form_sign_up').style.display = "none";
-},200);
-  }
-
-function cambiar_sign_up(at) {
-  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
-  document.querySelector('.cont_form_sign_up').style.display = "block";
-document.querySelector('.cont_form_login').style.opacity = "0";
-
-setTimeout(function(){  document.querySelector('.cont_form_sign_up').style.opacity = "1";
-},100);
-
-setTimeout(function(){   document.querySelector('.cont_form_login').style.display = "none";
-},400);
-
-
-}
-
-
-
-function ocultar_login_sign_up() {
-
-document.querySelector('.cont_forms').className = "cont_forms";
-document.querySelector('.cont_form_sign_up').style.opacity = "0";
-document.querySelector('.cont_form_login').style.opacity = "0";
-
-setTimeout(function(){
-document.querySelector('.cont_form_sign_up').style.display = "none";
-document.querySelector('.cont_form_login').style.display = "none";
-},500);
-
-  }
-
-
-
-
-</script>
 <style>
-/* ------------------------------------ Click on login and Sign Up to  changue and view the effect
----------------------------------------
-*/
 
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-* {
-  margin: 0px auto;
-  padding: 0px;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-.cotn_principal {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cfd8dc+0,607d8b+100,b0bec5+100 */
-background: #cfd8dc; /* Old browsers */
-background: -moz-linear-gradient(-45deg,  #cfd8dc 0%, #607d8b 100%, #b0bec5 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg,  #cfd8dc 0%,#607d8b 100%,#b0bec5 100%); /* Chrome10-25,Safari5.1-6 */
-background-image:  url("assets/img/login-2.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfd8dc', endColorstr='#b0bec5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    body {
+        background: #f6f5f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Montserrat', sans-serif;
+        height: 100vh;
+        margin: -20px 0 50px;
+    }
 
-}
+    h1 {
+        font-weight: bold;
+        margin: 0;
+    }
 
+    h2 {
+        text-align: center;
+    }
 
-.cont_centrar {
-  position: relative;
-  float: left;
-   width: 125%;
-}
+    p {
+        font-size: 14px;
+        font-weight: 100;
+        line-height: 20px;
+        letter-spacing: 0.5px;
+        margin: 20px 0 30px;
+    }
 
-.cont_login {
-  position: relative;
-  width: 640px;
-left: 50%;
-margin-left: -320px;
+    span {
+        font-size: 12px;
+    }
 
-}
+    a {
+        color: #333;
+        font-size: 14px;
+        text-decoration: none;
+        margin: 15px 0;
+    }
 
-.cont_back_info {
-position: relative;
-  float: left;
-  width: 640px;
-  height: 280px;
-overflow: hidden;
-  background-color: #fff;
-  margin-top: 100px;
-box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-}
+    button {
+        border-radius: 20px;
+        border: 1px solid #FF4B2B;
+        background-color: #FF4B2B;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+    }
 
-.cont_forms {
-  position: absolute;
-  overflow: hidden;
-  top:100px;
-left: 0px;
-  width: 320px;
-  height: 280px;
-  background-color: #eee;
--webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
+    button:active {
+        transform: scale(0.95);
+    }
 
-.cont_forms_active_login {
-box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 420px;
-top:20px;
-left: 0px;
-  -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
+    button:focus {
+        outline: none;
+    }
 
-}
+    button.ghost {
+        background-color: transparent;
+        border-color: #FFFFFF;
+    }
 
-.cont_forms_active_sign_up {
-box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
-  height: 420px;
-top:20px;
-left:320px;
--webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
+    form {
+        background-color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 50px;
+        height: 100%;
+        text-align: center;
+    }
 
-.cont_img_back_grey {
-  position: absolute;
-  width: 950px;
-top:-80px;
-  left: -116px;
-}
+    input {
+        background-color: #eee;
+        border: none;
+        padding: 12px 15px;
+        margin: 8px 0;
+        width: 100%;
+    }
 
-.cont_img_back_grey > img {
-  width: 100%;
- -webkit-filter: grayscale(100%);     filter: grayscale(100%);
-opacity: 0.2;
-animation-name: animar_fondo;
-  animation-duration: 20s;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
-animation-direction: alternate;
+    .container {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+        0 10px 10px rgba(0,0,0,0.22);
+        position: relative;
+        overflow: hidden;
+        width: 768px;
+        max-width: 100%;
+        min-height: 480px;
+    }
 
-}
+    .form-container {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        transition: all 0.6s ease-in-out;
+    }
 
-.cont_img_back_ {
-  position: absolute;
-  width: 950px;
-top:-80px;
-  left: -116px;
-}
+    .sign-in-container {
+        left: 0;
+        width: 50%;
+        z-index: 2;
+    }
 
-.cont_img_back_ > img {
-  width: 100%;
-opacity: 0.5;
-animation-name: animar_fondo;
-animation-duration: 20s;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
-animation-direction: alternate;
-}
+    .container.right-panel-active .sign-in-container {
+        transform: translateX(100%);
+    }
 
-.cont_forms_active_login > .cont_img_back_ {
-top:0px;
-  -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
+    .sign-up-container {
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+    }
 
-.cont_forms_active_sign_up > .cont_img_back_ {
-top:0px;
-left: -435px;
-  -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
+    .container.right-panel-active .sign-up-container {
+        transform: translateX(100%);
+        opacity: 1;
+        z-index: 5;
+        animation: show 0.6s;
+    }
 
+    @keyframes show {
+        0%, 49.99% {
+            opacity: 0;
+            z-index: 1;
+        }
 
-.cont_info_log_sign_up {
-position: absolute;
-  width: 640px;
-  height: 280px;
-  top: 100px;
-z-index: 1;
-}
+        50%, 100% {
+            opacity: 1;
+            z-index: 5;
+        }
+    }
 
-.col_md_login {
-  position: relative;
-  float: left;
-  width: 50%;
-}
+    .overlay-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        transition: transform 0.6s ease-in-out;
+        z-index: 100;
+    }
 
-.col_md_login > h2 {
-  font-weight: 400;
-margin-top: 70px;
-    color: #757575;
-}
+    .container.right-panel-active .overlay-container{
+        transform: translateX(-100%);
+    }
 
-.col_md_login > p {
- font-weight: 400;
-margin-top: 15px;
-width: 80%;
-    color: #37474F;
-}
+    .overlay {
+        background: #FF416C;
+        background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+        background: linear-gradient(to right, #FF4B2B, #FF416C);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0 0;
+        color: #FFFFFF;
+        position: relative;
+        left: -100%;
+        height: 100%;
+        width: 200%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
 
-.btn_login {
-background-color: #26C6DA;
-  border: none;
-  padding: 10px;
-width: 200px;
-border-radius:3px;
-box-shadow: 1px 5px 20px -5px rgba(0,0,0,0.4);
-  color: #fff;
-margin-top: 10px;
-cursor: pointer;
-}
+    .container.right-panel-active .overlay {
+        transform: translateX(50%);
+    }
 
-.col_md_sign_up {
-  position: relative;
-  float: left;
-  width: 50%;
-}
+    .overlay-panel {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+        text-align: center;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        transform: translateX(0);
+        transition: transform 0.6s ease-in-out;
+    }
 
-.cont_ba_opcitiy > h2 {
-  font-weight: 400;
-  color: #fff;
-}
+    .overlay-left {
+        transform: translateX(-20%);
+    }
 
-.cont_ba_opcitiy > p {
- font-weight: 400;
-margin-top: 15px;
- color: #fff;
-}
-/* ----------------------------------
-background text
-------------------------------------
- */
-.cont_ba_opcitiy {
-  position: relative;
-  background-color: rgba(120, 144, 156, 0.55);
-  width: 80%;
-  border-radius:3px ;
-margin-top: 60px;
-padding: 15px 0px;
-}
+    .container.right-panel-active .overlay-left {
+        transform: translateX(0);
+    }
 
-.btn_sign_up {
-background-color: #ef5350;
-  border: none;
-  padding: 10px;
-width: 200px;
-border-radius:3px;
-box-shadow: 1px 5px 20px -5px rgba(0,0,0,0.4);
-  color: #fff;
-margin-top: 10px;
-cursor: pointer;
-}
-.cont_forms_active_sign_up {
-z-index: 2;
-}
+    .overlay-right {
+        right: 0;
+        transform: translateX(0);
+    }
 
+    .container.right-panel-active .overlay-right {
+        transform: translateX(20%);
+    }
 
-@-webkit-keyframes animar_fondo {
-  from { -webkit-transform: scale(1) translate(0px);
--moz-transform: scale(1) translate(0px);
--ms-transform: scale(1) translate(0px);
--o-transform: scale(1) translate(0px);
-transform: scale(1) translate(0px); }
-  to { -webkit-transform: scale(1.5) translate(50px);
--moz-transform: scale(1.5) translate(50px);
--ms-transform: scale(1.5) translate(50px);
--o-transform: scale(1.5) translate(50px);
-transform: scale(1.5) translate(50px); }
-}
-@-o-keyframes identifier {
-  from { -webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1); }
-  to { -webkit-transform: scale(1.5);
--moz-transform: scale(1.5);
--ms-transform: scale(1.5);
--o-transform: scale(1.5);
-transform: scale(1.5); }
+    .social-container {
+        margin: 20px 0;
+    }
 
-}
-@-moz-keyframes identifier {
-  from { -webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1); }
-  to { -webkit-transform: scale(1.5);
--moz-transform: scale(1.5);
--ms-transform: scale(1.5);
--o-transform: scale(1.5);
-transform: scale(1.5); }
+    .social-container a {
+        border: 1px solid #DDDDDD;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        height: 40px;
+        width: 40px;
+    }
 
-}
-@keyframes identifier {
-  from { -webkit-transform: scale(1);
--moz-transform: scale(1);
--ms-transform: scale(1);
--o-transform: scale(1);
-transform: scale(1); }
-  to { -webkit-transform: scale(1.5);
--moz-transform: scale(1.5);
--ms-transform: scale(1.5);
--o-transform: scale(1.5);
-transform: scale(1.5); }
-}
-.cont_form_login {
-  position: absolute;
-  opacity: 0;
-display: none;
-  width: 320px;
-  -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
+    footer {
+        background-color: #222;
+        color: #fff;
+        font-size: 14px;
+        bottom: 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 999;
+    }
 
-.cont_forms_active_login {
-z-index: 2;
-}
-.cont_forms_active_login  >.cont_form_login {
-}
+    footer p {
+        margin: 10px 0;
+    }
 
-.cont_form_sign_up {
-  position: absolute;
-  width: 320px;
-float: left;
-  opacity: 0;
-display: none;
-  -webkit-transition: all 0.5s;
--moz-transition: all 0.5s;
--ms-transition: all 0.5s;
--o-transition: all 0.5s;
-transition: all 0.5s;
-}
+    footer i {
+        color: red;
+    }
 
-
-.cont_form_sign_up > input {
-text-align: left;
-  padding: 15px 5px;
-margin-left: 10px;
-margin-top: 20px;
-  width: 260px;
-border: none;
-    color: #757575;
-}
-
-.cont_form_sign_up > h2 {
-margin-top: 50px;
-font-weight: 400;
-  color: #757575;
-}
-
-
-.cont_form_login > input {
-  padding: 15px 5px;
-margin-left: 10px;
-margin-top: 20px;
-  width: 260px;
-border: none;
-text-align: left;
-  color: #757575;
-}
-
-.cont_form_login > h2 {
-margin-top: 110px;
-font-weight: 400;
-  color: #757575;
-}
-.cont_form_login > a,.cont_form_sign_up > a  {
-  color: #757575;
-    position: relative;
-    float: left;
-    margin: 10px;
-margin-left: 30px;
-}
+    footer a {
+        color: #3c97bf;
+        text-decoration: none;
+    }
 </style>
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+</script>
